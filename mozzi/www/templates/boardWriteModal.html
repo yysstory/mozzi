@@ -1,0 +1,24 @@
+<ion-modal-view>
+    <ion-header-bar>
+      <h1 class="title">글쓰기</h1>
+      <div class="buttons">
+        <button class="button" ng-click="closeModal()">닫기</button>
+      </div>
+    </ion-header-bar>
+    <ion-content>
+        <form ng-submit="doBoardWrite()">
+            <div class="list list-inset">
+              <label class="item item-input">
+                <input type="text" placeholder="제목" required="true"
+                       ng-required="true" ng-model="boardInfo.title">
+              </label>
+              <label class="item item-input">
+                <textarea rows="10" placeholder="내용" required="true"
+                          ng-model="boardInfo.content"></textarea>
+              </label>
+              <ion-checkbox>내 위치 공유하기</ion-checkbox>
+              <button class="button button-block button-dark" type="submit">완료</button>
+            </div>
+        </form>
+    </ion-content>
+</ion-modal-view>

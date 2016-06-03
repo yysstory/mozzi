@@ -1,0 +1,32 @@
+<ion-view view-title="회원가입">
+    <ion-content>
+        <form ng-submit="doJoin()">
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <span class="input-label">NAME</span>
+                    <input type="text" placeholder="이름" ng-required="true" ng-model="joinInfo.name">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">EMAIL</span>
+                    <input type="email" placeholder="이메일" ng-required="true" ng-model="joinInfo.email">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">PASSWORD</span>
+                    <input type="password" placeholder="비밀번호" ng-required="true" ng-model="joinInfo.password">
+                </label>
+            </div>
+            <div class="card list">
+                <div class="item item-divider">
+                    회원가입동의
+                </div>
+                <div class="item item-text-wrap">
+                    블라블라
+                </div>
+                <ion-checkbox>동의합니다.</ion-checkbox>
+            </div>
+            <div class="list list-inset">
+                <button class="button button-block button-dark" type="submit">회원가입</button>
+            </div>
+        </form>
+    </ion-content>
+</ion-view>

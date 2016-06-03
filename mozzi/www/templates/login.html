@@ -1,0 +1,15 @@
+<ion-view view-title="로그인">
+  <ion-content>
+    <form ng-submit="doLogin()">
+      <div class="list list-inset">
+        <label class="item item-input">
+          <input type="text" placeholder="이메일을 입력하세요" ng-required="true" ng-model="loginInfo.email">
+        </label>
+        <label class="item item-input">
+          <input type="password" placeholder="비밀번호를 입력하세요" ng-required="true" ng-model="loginInfo.password">
+        </label>
+        <button class="button button-block button-gray" type="submit">로그인</button>
+      </div>
+    </form>
+  </ion-content>
+</ion-view>

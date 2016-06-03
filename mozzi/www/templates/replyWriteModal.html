@@ -1,0 +1,18 @@
+<ion-modal-view>
+    <ion-header-bar>
+      <h1 class="title">댓글 쓰기</h1>
+      <div class="buttons">
+        <button class="button" ng-click="closeModal()">닫기</button>
+      </div>
+    </ion-header-bar>
+    <ion-content>
+        <form ng-submit="doReplyWrite()">
+            <div class="list list-inset">
+              <label class="item item-input">
+                <textarea rows="10" placeholder="글을 써주세요" required="true" ng-model="replyInfo.content"></textarea>
+              </label>
+              <button class="button button-block button-dark" type="submit">완료</button>
+            </div>
+        </form>
+    </ion-content>
+</ion-modal-view>

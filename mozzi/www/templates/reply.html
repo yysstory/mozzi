@@ -1,0 +1,16 @@
+<ion-view view-title="댓글">
+    <ion-nav-buttons side="right">
+      <button class="button" ng-click="openModal()">
+        댓글쓰기
+      </button>
+    </ion-nav-buttons>
+    <ion-content>
+        <div class="list">
+            <a class="item item-avatar" href="#" ng-repeat="reply in replyList">
+                <img src="../img/perry.png">
+                <h2>{{reply.CONTENT}}</h2>
+                <p>{{reply.NAME}}</p>
+            </a>
+        </div>
+    </ion-content>
+</ion-view>

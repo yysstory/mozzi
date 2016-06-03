@@ -1,0 +1,10 @@
+{
+  "name": "mozzi",
+  "app_id": "9f1321d1",
+  "proxies": [
+    {
+      "path": "/ajax",
+      "proxyUrl": "http://192.168.0.2:3000"
+    }
+  ]
+}
