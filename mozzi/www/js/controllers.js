@@ -52,7 +52,7 @@
   });
 
   app.controller('boardCtrl', function($scope,$ionicModal,Board,$ionicHistory,$state) {
-    $ionicModal.fromTemplateUrl('/templates/boardWriteModal.html', {
+    $ionicModal.fromTemplateUrl('templates/boardWriteModal.html', {
       scope: $scope,
       animation: 'slide-in-up'
     }).then(function(modal) {
@@ -104,7 +104,7 @@
         $scope.replyList = data;
       })
     }
-    $ionicModal.fromTemplateUrl('/templates/replyWriteModal.html', {
+    $ionicModal.fromTemplateUrl('templates/replyWriteModal.html', {
       scope: $scope,
       animation: 'slide-in-up'
     }).then(function(modal) {

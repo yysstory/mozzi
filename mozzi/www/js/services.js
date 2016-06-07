@@ -1,8 +1,8 @@
-app.service('Auth', ['$http','$q',function($http,$q){
+app.service('Auth', ['$http','$q','CONSTANT',function($http,$q,CONSTANT){
   this.join = function(name,email,password) {
     var deferred = $q.defer();
     $http.post(
-      '/ajax/user/join',
+      CONSTANT.url+'/user/join',
       {"name":name,"email":email,"password":password}
       ).success(function(data){
         if(data.affectedRows === 1){
@@ -15,7 +15,7 @@ app.service('Auth', ['$http','$q',function($http,$q){
   this.login = function(email,password){
     var deferred = $q.defer();
     $http.post(
-      '/ajax/user/login',
+      CONSTANT.url+'/user/login',
       {"email":email,"password":password}
     ).success(function(data){
         deferred.resolve(data);
@@ -24,11 +24,11 @@ app.service('Auth', ['$http','$q',function($http,$q){
   }
 }])
 
-app.service('REPLY', ['$http','$q',function($http,$q){
+app.service('REPLY', ['$http','$q','CONSTANT',function($http,$q,CONSTANT){
   this.write = function(boardNo,content){
     var deferred = $q.defer();
     $http.post(
-      '/ajax/reply/write',
+      CONSTANT.url+'/reply/write',
       {"boardNo":boardNo,"content":content}
     ).success(function(data){
       if(data.affectedRows === 1){
@@ -41,7 +41,7 @@ app.service('REPLY', ['$http','$q',function($http,$q){
   this.read = function(boardNo){
     var deferred = $q.defer();
     $http.post(
-      '/ajax/reply/read',
+      CONSTANT.url+'/reply/read',
       {'boardNo':boardNo}
     ).success(function(data){
       deferred.resolve(data);
@@ -50,11 +50,11 @@ app.service('REPLY', ['$http','$q',function($http,$q){
   }
 }])
 
-app.service('Board', ['$http','$q',function($http,$q){
+app.service('Board', ['$http','$q','CONSTANT',function($http,$q,CONSTANT){
   this.write = function(title,content){
     var deferred = $q.defer();
     $http.post(
-      '/ajax/board/write',
+      CONSTANT.url+'/board/write',
       {"title":title,"content":content}
     ).success(function(data){
       if(data.affectedRows === 1){
@@ -69,7 +69,7 @@ app.service('Board', ['$http','$q',function($http,$q){
   this.read = function(){
     var deferred = $q.defer();
     $http.post(
-      '/ajax/board/read',
+      CONSTANT.url+'/board/read',
       {}
     ).success(function(data){
         deferred.resolve(data);
