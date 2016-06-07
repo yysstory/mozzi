@@ -12,8 +12,8 @@ var app = angular.module('starter', ['ionic'])
     });
   })
 app.constant('CONSTANT',{
-  //'url': '/ajax'
-  'url':'http://posmall.iptime.org:3000'
+  'url': '/ajax'
+  //'url':'http://yysstory.iptime.org:3000'
 })
 app.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
