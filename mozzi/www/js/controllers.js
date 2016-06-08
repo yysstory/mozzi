@@ -51,7 +51,7 @@
     }
   });
 
-  app.controller('boardCtrl', function($scope,$ionicModal,Board,$ionicHistory,$state) {
+  app.controller('boardCtrl', function($scope,$ionicModal,Board) {
     $ionicModal.fromTemplateUrl('templates/boardWriteModal.html', {
       scope: $scope,
       animation: 'slide-in-up'
