@@ -1,4 +1,4 @@
-  app.controller('AppCtrl', function($scope) {
+  app.controller('AppCtrl', function($scope,$rootScope) {
     $scope.joinInfo = {};
     $scope.loginInfo = {email:'yysstory@gmail.com',password:'111111'};
     $scope.userInfo = {};
@@ -6,14 +6,15 @@
     $scope.replyInfo = {};
   });
 
-  app.controller('loginCtrl', function($scope,Auth,$ionicPopup,$state,$ionicHistory) {
+  app.controller('loginCtrl', function($scope,Auth,$ionicPopup,$state,$ionicHistory,$rootScope) {
     $scope.doLogin = function(){
       var email = $scope.loginInfo.email;
       var password = $scope.loginInfo.password;
       Auth.login(email,password).then(function(data) {
         console.log(data);
         if(data.userInfo.email){
-          $scope.userInfo=data.userInfo;
+          $rootScope.userInfo=data.userInfo;
+          console.log('logincnt'+$scope.userInfo);
           $ionicHistory.nextViewOptions({
             disableBack: true
           });

@@ -18,13 +18,13 @@
     </ion-header-bar>
     <ion-content>
       <ion-list>
-        <ion-item menu-close href="#/app/login">
+        <ion-item menu-close href="#/app/login" ng-show="userInfo.email">
           로그인
         </ion-item>
-        <ion-item menu-close href="#/app/join">
+        <ion-item menu-close href="#/app/join" ng-show="userInfo.email">
           회원가입
         </ion-item>
-        <ion-item menu-close href="#/app/board">
+        <ion-item menu-close href="#/app/board" ng-show="!userInfo.email">
           게시판
         </ion-item>
       </ion-list>
