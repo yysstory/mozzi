@@ -1,7 +1,6 @@
-  app.controller('AppCtrl', function($scope,$rootScope) {
+  app.controller('AppCtrl', function($scope) {
     $scope.joinInfo = {};
     $scope.loginInfo = {email:'yysstory@gmail.com',password:'111111'};
-    $scope.userInfo = {};
     $scope.boardInfo = {};
     $scope.replyInfo = {};
   });

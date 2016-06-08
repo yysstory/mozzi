@@ -4,7 +4,7 @@
   "proxies": [
     {
       "path": "/ajax",
-      "proxyUrl": "http://yysstory.iptime.org:3000"
+      "proxyUrl": "http://posmall.iptime.org:3000"
     }
   ]
 }
