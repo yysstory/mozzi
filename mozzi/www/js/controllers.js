@@ -71,7 +71,7 @@
     $scope.doBoardWrite = function(){
       var title = $scope.boardInfo.title;
       var content = $scope.boardInfo.content;
-      Board.write(title,content,position).then(function(data){
+      Board.write(title,content,location).then(function(data){
         if(data.resultMsg === 'success'){
           $scope.closeModal();
           roadBoardList();
@@ -82,13 +82,14 @@
         $scope.errMsg = msg;
       })
     }
+    roadBoardList();
     function roadBoardList(){
       Board.read().then(function(data){
         $scope.boardList = data;
       })
     }
-    var position = getPosition();
-    function getPosition(){
+    var location = getLocation();
+    function getLocation(){
       var geoOptions = {
         enableHighAccuracy: true,
         timeout: 5000,

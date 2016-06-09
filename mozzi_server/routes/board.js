@@ -7,7 +7,7 @@ router.post('/write', function(req, res, next) {
     var memNo = session.userInfo.memNo;
     var title = req.body.title;
     var content = req.body.content;
-    var location = req.body.location;
+    var location = req.body.location ? req.body.location : '' ;
     db(function(err,connenction){
         connenction.query("INSERT INTO BOARD (MEM_NO,TITLE,CONTENT,LOCATION,REG_DATE) VALUES " +
             "('"+memNo+"','"+title+"','"+content+"','"+location+"',CURDATE())",
