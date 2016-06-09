@@ -64,6 +64,8 @@
     });
     $scope.openModal = function() {
       $scope.modal.show();
+      location = getLocation();
+      console.log(location);
     };
     $scope.closeModal = function() {
       $scope.modal.hide();
@@ -71,6 +73,7 @@
     $scope.doBoardWrite = function(){
       var title = $scope.boardInfo.title;
       var content = $scope.boardInfo.content;
+      console.log(location);
       Board.write(title,content,location).then(function(data){
         if(data.resultMsg === 'success'){
           $scope.closeModal();
@@ -79,30 +82,16 @@
           $scope.boardInfo.content='';
         }
       }).then(function(msg){
-        $scope.errMsg = msg;
+        console.log(msg);
       })
     }
     roadBoardList();
     function roadBoardList(){
       Board.read().then(function(data){
         $scope.boardList = data;
+      }).then(function(msg){
+        console.log(msg);
       })
-    }
-    var location = getLocation();
-    function getLocation(){
-      var geoOptions = {
-        enableHighAccuracy: true,
-        timeout: 5000,
-        maximumAge: 0
-      };
-      $cordovaGeolocation.getCurrentPosition(geoOptions).then(function (position) {
-        var latitude  = position.coords.latitude;
-        var longitude = position.coords.longitude;
-        return latitude+','+longitude;
-      }, function(err) {
-        console.log(err);
-        return;
-      });
     }
   });
 

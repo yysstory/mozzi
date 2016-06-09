@@ -60,8 +60,8 @@ app.service('Board', ['$http','$q','CONSTANT',function($http,$q,CONSTANT){
       if(data.affectedRows === 1){
         deferred.resolve({resultMsg:"success"});
       }
-    }).error(function(msg){
-      deferred.reject(msg);
+    }).error(function(err){
+      deferred.reject(err);
     })
       return deferred.promise;
   }
@@ -75,5 +75,23 @@ app.service('Board', ['$http','$q','CONSTANT',function($http,$q,CONSTANT){
         deferred.resolve(data);
     })
     return deferred.promise;
+  }
+}])
+
+app.service('Device', ['$q',function($q,$cordovaGeolocation){
+  this.getLocation = function(){
+    var deferred = $q.defer();
+    var geoOptions = {
+      enableHighAccuracy: true,
+      timeout: 5000,
+      maximumAge: 0
+    };
+    $cordovaGeolocation.getCurrentPosition(geoOptions).then(function (position) {
+      var latitude  = position.coords.latitude;
+      var longitude = position.coords.longitude;
+      deferred.resolve(latitude+','+longitude);
+    }, function(err) {
+      deferred.reject(err);
+    });
   }
 }])

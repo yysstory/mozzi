@@ -140,11 +140,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="controllers.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="controllers.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/www/js/controllers.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-295">
-                  <caret line="76" column="23" selection-start-line="76" selection-start-column="10" selection-end-line="76" selection-end-column="23" />
+                <state relative-caret-position="465">
+                  <caret line="92" column="25" selection-start-line="92" selection-start-column="25" selection-end-line="92" selection-end-column="25" />
                   <folding />
                 </state>
               </provider>
@@ -170,11 +170,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="services.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="services.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/www/js/services.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="505">
-                  <caret line="57" column="45" selection-start-line="57" selection-start-column="45" selection-end-line="57" selection-end-column="45" />
+                <state relative-caret-position="619">
+                  <caret line="81" column="18" selection-start-line="81" selection-start-column="7" selection-end-line="81" selection-end-column="18" />
                   <folding />
                 </state>
               </provider>
@@ -221,8 +221,8 @@
         <option value="$PROJECT_DIR$/www/templates/menu.html" />
         <option value="$PROJECT_DIR$/www/index.html" />
         <option value="$PROJECT_DIR$/www/js/app.js" />
-        <option value="$PROJECT_DIR$/www/js/controllers.js" />
         <option value="$PROJECT_DIR$/www/js/services.js" />
+        <option value="$PROJECT_DIR$/www/js/controllers.js" />
       </list>
     </option>
   </component>
@@ -783,12 +783,12 @@
       <workItem from="1465295896068" duration="1534000" />
       <workItem from="1465344650191" duration="2557000" />
       <workItem from="1465431861427" duration="545000" />
-      <workItem from="1465433666927" duration="19106000" />
+      <workItem from="1465433666927" duration="21127000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="145861000" />
+    <option name="totallyTimeSpent" value="147882000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
@@ -1154,18 +1154,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/controllers.js">
+    <entry file="file://$PROJECT_DIR$/www/js/services.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-295">
-          <caret line="76" column="23" selection-start-line="76" selection-start-column="10" selection-end-line="76" selection-end-column="23" />
+        <state relative-caret-position="619">
+          <caret line="81" column="18" selection-start-line="81" selection-start-column="7" selection-end-line="81" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/services.js">
+    <entry file="file://$PROJECT_DIR$/www/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="505">
-          <caret line="57" column="45" selection-start-line="57" selection-start-column="45" selection-end-line="57" selection-end-column="45" />
+        <state relative-caret-position="465">
+          <caret line="92" column="25" selection-start-line="92" selection-start-column="25" selection-end-line="92" selection-end-column="25" />
           <folding />
         </state>
       </provider>
