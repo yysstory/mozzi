@@ -7,9 +7,10 @@ router.post('/write', function(req, res, next) {
     var memNo = session.userInfo.memNo;
     var title = req.body.title;
     var content = req.body.content;
+    var location = req.body.location ? req.body.location : '' ;
     db(function(err,connenction){
-        connenction.query("INSERT INTO BOARD (MEM_NO,TITLE,CONTENT,REG_DATE) VALUES " +
-            "('"+memNo+"','"+title+"','"+content+"',CURDATE())",
+        connenction.query("INSERT INTO BOARD (MEM_NO,TITLE,CONTENT,LOCATION,REG_DATE) VALUES " +
+            "('"+memNo+"','"+title+"','"+content+"','"+location+"',CURDATE())",
             function(err, rows) {
                 if (err) throw err;
                 res.send(rows);
@@ -33,6 +34,7 @@ router.post('/read', function(req, res, next) {
     });
 });
 
+//서버 작동 테스트
 router.get('/read', function(req, res, next) {
     db(function(err,connenction){
         connenction.query("SELECT B.BOARD_NO,B.MEM_NO,B.TITLE,B.CONTENT,B.REG_DATE, " +
