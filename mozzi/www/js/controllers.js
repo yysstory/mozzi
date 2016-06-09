@@ -54,7 +54,7 @@
     }
   });
 
-  app.controller('boardCtrl', function($scope,$ionicModal,Board,$cordovaGeolocation) {
+  app.controller('boardCtrl', function($scope,$ionicModal,Board,Device) {
     $scope.boardInfo = {};
     $ionicModal.fromTemplateUrl('templates/boardWriteModal.html', {
       scope: $scope,
@@ -64,16 +64,19 @@
     });
     $scope.openModal = function() {
       $scope.modal.show();
-      location = getLocation();
-      console.log(location);
     };
     $scope.closeModal = function() {
       $scope.modal.hide();
     };
+    var location;
+    Device.getLocation().then(function(data){
+      location=data;
+    }).then(function(err){
+      console.log(err);
+    })
     $scope.doBoardWrite = function(){
       var title = $scope.boardInfo.title;
       var content = $scope.boardInfo.content;
-      console.log(location);
       Board.write(title,content,location).then(function(data){
         if(data.resultMsg === 'success'){
           $scope.closeModal();
@@ -89,8 +92,8 @@
     function roadBoardList(){
       Board.read().then(function(data){
         $scope.boardList = data;
-      }).then(function(msg){
-        console.log(msg);
+      }).then(function(err){
+        console.log(err);
       })
     }
   });

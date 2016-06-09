@@ -78,7 +78,7 @@ app.service('Board', ['$http','$q','CONSTANT',function($http,$q,CONSTANT){
   }
 }])
 
-app.service('Device', ['$q',function($q,$cordovaGeolocation){
+app.service('Device', ['$q','$cordovaGeolocation',function($q,$cordovaGeolocation){
   this.getLocation = function(){
     var deferred = $q.defer();
     var geoOptions = {
@@ -93,5 +93,6 @@ app.service('Device', ['$q',function($q,$cordovaGeolocation){
     }, function(err) {
       deferred.reject(err);
     });
+    return deferred.promise;
   }
 }])
