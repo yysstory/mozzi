@@ -12,8 +12,8 @@ app.run(function($ionicPlatform) {
   });
 })
 app.constant('CONSTANT',{
-  //'url': '/ajax'
-  'url':'http://yysstory.iptime.org:3000'
+  'url': '/ajax'
+  //'url':'http://yysstory.iptime.org:3000'
 })
 app.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
