@@ -51,11 +51,11 @@ app.service('REPLY', ['$http','$q','CONSTANT',function($http,$q,CONSTANT){
 }])
 
 app.service('Board', ['$http','$q','CONSTANT',function($http,$q,CONSTANT){
-  this.write = function(title,content){
+  this.write = function(title,content,position){
     var deferred = $q.defer();
     $http.post(
       CONSTANT.url+'/board/write',
-      {"title":title,"content":content}
+      {"title":title,"content":content,"position":position}
     ).success(function(data){
       if(data.affectedRows === 1){
         deferred.resolve({resultMsg:"success"});
