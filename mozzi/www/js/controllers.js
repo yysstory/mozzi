@@ -68,15 +68,20 @@
     $scope.closeModal = function() {
       $scope.modal.hide();
     };
-    var location;
+    var deviceLocation;
     Device.getLocation().then(function(data){
-      location=data;
+      deviceLocation=data;
     }).then(function(err){
       console.log(err);
     })
+    console.log($scope.boardInfo.isChecked);
     $scope.doBoardWrite = function(){
       var title = $scope.boardInfo.title;
       var content = $scope.boardInfo.content;
+      var location = '';
+      if($scope.boardInfo.isChecked){
+        location = '37.46846,127.04003';
+      }
       Board.write(title,content,location).then(function(data){
         if(data.resultMsg === 'success'){
           $scope.closeModal();
@@ -97,14 +102,6 @@
       })
     }
 
-
-    var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
-    var options = { //지도를 생성할 때 필요한 기본 옵션
-      center: new daum.maps.LatLng(33.450701, 126.570667), //지도의 중심좌표.
-      level: 3 //지도의 레벨(확대, 축소 정도)
-    };
-
-    var map = new daum.maps.Map(container, options); //지도 생성 및 객체 리턴
 
   });
 

@@ -5,7 +5,6 @@
         </button>
     </ion-nav-buttons>
     <ion-content>
-      {{errMsg}}
         <div class="list card" ng-repeat="board in boardList">
             <div class="item item-avatar">
                 <img src="img/ben.png">
@@ -13,8 +12,7 @@
                 <p>{{board.NAME}}</p>
             </div>
             <div class="item item-body">
-              <div id="map" style="width:200px;height:200px;"></div>
-
+              <google-map location="{{board.LOCATION}}" ng-show="board.LOCATION" ></google-map>
               <p>
                   {{board.CONTENT}}
                 </p>
