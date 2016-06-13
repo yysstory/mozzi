@@ -55,7 +55,9 @@
   });
 
   app.controller('boardCtrl', function($scope,$ionicModal,Board,Device) {
-    $scope.boardInfo = {};
+    $scope.boardInfo = {
+      locationSharingAgree:true
+    };
     $ionicModal.fromTemplateUrl('templates/boardWriteModal.html', {
       scope: $scope,
       animation: 'slide-in-up'
@@ -74,13 +76,14 @@
     }).then(function(err){
       console.log(err);
     })
-    console.log($scope.boardInfo.isChecked);
+
     $scope.doBoardWrite = function(){
       var title = $scope.boardInfo.title;
       var content = $scope.boardInfo.content;
       var location = '';
-      if($scope.boardInfo.isChecked){
-        location = '37.46846,127.04003';
+      console.log($scope.boardInfo.locationSharingAgree);
+      if($scope.boardInfo.locationSharingAgree){
+        location = deviceLocation;
       }
       Board.write(title,content,location).then(function(data){
         if(data.resultMsg === 'success'){
@@ -101,8 +104,6 @@
         console.log(err);
       })
     }
-
-
   });
 
   app.controller('replyCtrl', function($scope,$ionicModal,$stateParams,REPLY) {
