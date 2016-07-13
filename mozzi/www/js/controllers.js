@@ -3,6 +3,7 @@
 
   app.controller('loginCtrl', function($scope,Auth,$ionicPopup,$state,$ionicHistory,$rootScope,$window) {
     $scope.loginInfo = {};
+    $rootScope.userInfo= {};
     $scope.doLogin = function(){
       var email = $scope.loginInfo.email;
       var password = $scope.loginInfo.password;
@@ -27,6 +28,8 @@
     }
    if($window.localStorage.savedUserInfo){
       var savedUserInfo =  JSON.parse($window.localStorage.savedUserInfo);
+      $rootScope.userInfo.email = savedUserInfo.email;
+      $rootScope.userInfo.password = savedUserInfo.password;
       $scope.loginInfo.email = savedUserInfo.email;
       $scope.loginInfo.password = savedUserInfo.password;
       $scope.doLogin();
@@ -66,16 +69,19 @@
     });
     $scope.openModal = function() {
       $scope.modal.show();
+      Device.getLocation().then(function(data){
+        deviceLocation=data;
+        console.log(data);
+      }).then(function(err){
+        console.log(err);
+      })
     };
     $scope.closeModal = function() {
       $scope.modal.hide();
     };
+
     var deviceLocation;
-    Device.getLocation().then(function(data){
-      deviceLocation=data;
-    }).then(function(err){
-      console.log(err);
-    })
+
 
     $scope.doBoardWrite = function(){
       var title = $scope.boardInfo.title;
